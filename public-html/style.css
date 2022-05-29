@@ -78,7 +78,7 @@ body::before {
   margin-bottom: 10px;
 }
 body::after {
-  content: 'aws_codeCommit==> aws_codebuild==> aws_ecr==> aws_codedeploy(ecs-fargate)';
+  content: 'VERSION: 2.8';
   color: #1EA7AB;
   width: 120px;
   font-size: 30px;
