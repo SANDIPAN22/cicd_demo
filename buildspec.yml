@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  
+  pre_build:
+    commands:
+      - echo logging to ecr to push the newly created image
+      - $ (aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 065456982440.dkr.ecr.us-east-1.amazonaws.com)
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - docker build -t cicd_demo .
+      - docker tag cicd_demo:latest 065456982440.dkr.ecr.us-east-1.amazonaws.com/cicd_demo:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - docker push 065456982440.dkr.ecr.us-east-1.amazonaws.com/cicd_demo:latest
