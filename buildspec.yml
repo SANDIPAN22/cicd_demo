@@ -16,3 +16,6 @@ phases:
     commands:
       - echo Build completed on `date`
       - docker push 065456982440.dkr.ecr.us-east-1.amazonaws.com/cicd_demo:latest
+artifacts:
+  files:
+  - imagedefinitions.json
